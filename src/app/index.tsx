@@ -8,7 +8,7 @@ export default function Home() {
       <Text>Home</Text>
       <Pressable
         onPress={() => {
-          router.push("/auth/register");
+          router.push("/auth/welcome");
         }}
       >
         <Text>register</Text>
