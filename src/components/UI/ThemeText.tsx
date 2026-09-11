@@ -3,7 +3,7 @@ import { useAppTheme } from "@/hooks/useAppTheme";
 import { Text } from "react-native";
 
 interface ThemeTextProps {
-  theme: keyof Theme["text"];
+  theme?: keyof Theme["text"];
   children: React.ReactNode;
 }
 

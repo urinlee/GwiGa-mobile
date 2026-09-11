@@ -7,13 +7,12 @@ interface ThemeBackgroundProps {
   children: React.ReactNode;
 }
 
-export function ThemeBackground({
-  theme = "default",
-  children,
-}: ThemeBackgroundProps) {
+export function ThemeBackground({ theme, children }: ThemeBackgroundProps) {
   const Colors = useAppTheme();
   return (
-    <View style={{ flex: 1, backgroundColor: Colors.background[theme] }}>
+    <View
+      style={{ flex: 1, backgroundColor: theme && Colors.background[theme] }}
+    >
       {children}
     </View>
   );
