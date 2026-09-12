@@ -7,7 +7,7 @@ export function Screen({
   children,
 }: {
   backgroundColor?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }) {
   const insets = useSafeAreaInsets();
   const insetPadding = {
