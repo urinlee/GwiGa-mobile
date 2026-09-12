@@ -1,9 +1,14 @@
 import { Screen } from "@/components/Layout/Screen";
 import { BottomButton } from "@/components/UI/BottomButton";
 import { ThemeText } from "@/components/UI/ThemeText";
+import { router } from "expo-router";
 import { StyleSheet, View } from "react-native";
 
 export default function Register() {
+  const handleClickStart = () => {
+    router.push("/auth/login");
+  };
+
   return (
     <Screen>
       <View style={styles.Container}>
@@ -16,7 +21,7 @@ export default function Register() {
           </ThemeText>
         </View>
         <View style={{ paddingHorizontal: 16, paddingBottom: 64 }}>
-          <BottomButton label="시작하기" onPress={() => {}} />
+          <BottomButton label="시작하기" onPress={handleClickStart} />
         </View>
       </View>
     </Screen>
