@@ -1,4 +1,4 @@
-import { Fonts } from "@/constants/theme";
+import { Fonts, Theme } from "@/constants/theme";
 import { useAppTheme } from "@/hooks/useAppTheme";
 import { StyleSheet, Text } from "react-native";
 import { ThemeButton } from "./ThemeButton";
@@ -6,15 +6,25 @@ import { ThemeButton } from "./ThemeButton";
 interface ButtonProps {
   label: string;
   onPress?: () => void;
+  theme?: keyof Theme["button"];
+  disabled?: boolean;
 }
 
-export function BottomButton({ label, onPress }: ButtonProps) {
+export function BottomButton({
+  label,
+  onPress,
+  theme = "primary",
+  disabled,
+}: ButtonProps) {
   const Color = useAppTheme();
   return (
-    <ThemeButton theme="primary" style={style.button} onPress={onPress}>
-      <Text style={{ color: Color.button.primary.text, ...style.buttonText }}>
-        {label}
-      </Text>
+    <ThemeButton
+      theme={theme}
+      disabled={disabled}
+      style={style.button}
+      onPress={onPress}
+    >
+      <Text style={{ ...style.buttonText }}>{label}</Text>
     </ThemeButton>
   );
 }
@@ -24,7 +34,6 @@ const style = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 20,
     borderRadius: 8,
-    display: "flex",
     justifyContent: "center",
     alignItems: "center",
   },
