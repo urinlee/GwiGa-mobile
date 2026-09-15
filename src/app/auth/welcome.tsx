@@ -1,16 +1,16 @@
-import { Screen } from "@/components/Layout/Screen";
+import { WelcomeScreen } from "@/components/Layout/WelcomeScreen";
 import { BottomButton } from "@/components/UI/BottomButton";
 import { ThemeText } from "@/components/UI/ThemeText";
 import { router } from "expo-router";
 import { StyleSheet, View } from "react-native";
 
-export default function Register() {
+export default function Welcome() {
   const handleClickStart = () => {
     router.push("/auth/login");
   };
 
   return (
-    <Screen>
+    <WelcomeScreen>
       <View style={styles.Container}>
         <View style={styles.Content}>
           <ThemeText theme="secondary" style={styles.Description}>
@@ -20,18 +20,17 @@ export default function Register() {
             GwiGa
           </ThemeText>
         </View>
-        <View style={{ paddingHorizontal: 16, paddingBottom: 64 }}>
+        <View>
           <BottomButton label="시작하기" onPress={handleClickStart} />
         </View>
       </View>
-    </Screen>
+    </WelcomeScreen>
   );
 }
 
 const styles = StyleSheet.create({
   Container: {
-    flex: 1,
-    display: "flex",
+    height: "100%",
   },
   Content: {
     flex: 1,
