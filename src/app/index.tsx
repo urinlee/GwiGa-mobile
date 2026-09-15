@@ -13,6 +13,13 @@ export default function Home() {
       >
         <Text>register</Text>
       </Pressable>
+      <Pressable
+        onPress={() => {
+          router.push("/auth/register/first");
+        }}
+      >
+        <Text>first</Text>
+      </Pressable>
     </Screen>
   );
 }
