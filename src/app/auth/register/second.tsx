@@ -1,9 +1,10 @@
 import {
-  VerificationMethodCard,
-  type VerificationMethodCardProps,
+    VerificationMethodCard,
+    type VerificationMethodCardProps,
 } from "@/components/Auth/VerificationMethodCard";
 import { WelcomeScreen } from "@/components/Layout/WelcomeScreen";
 import { BottomButton } from "@/components/UI/BottomButton";
+import { GoBackHeader } from "@/components/UI/GoBackHeader";
 import { ThemeText } from "@/components/UI/ThemeText";
 import { Fonts } from "@/constants/theme";
 import { ScrollView, StyleSheet, View } from "react-native";
@@ -29,6 +30,7 @@ export default function RegisterVerificationScreen() {
   return (
     <WelcomeScreen>
       <View style={styles.container}>
+        <GoBackHeader />
         <ThemeText theme="brand" style={styles.title}>
           인증
         </ThemeText>
@@ -41,9 +43,7 @@ export default function RegisterVerificationScreen() {
           ))}
         </ScrollView>
         <View style={styles.footer}>
-          <ThemeText style={styles.skipHint}>
-            지금은 넘어갈 수 있어요
-          </ThemeText>
+          <ThemeText style={styles.skipHint}>지금은 넘어갈 수 있어요</ThemeText>
           <BottomButton label="끝낼래요" />
         </View>
       </View>

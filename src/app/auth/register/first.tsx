@@ -1,12 +1,14 @@
 import { WelcomeScreen } from "@/components/Layout/WelcomeScreen";
 import { EditableAvatar } from "@/components/UI/Avatar";
 import { BottomButton } from "@/components/UI/BottomButton";
+import { GoBackHeader } from "@/components/UI/GoBackHeader";
 import { StatusText } from "@/components/UI/StatusText";
 import { ThemeText } from "@/components/UI/ThemeText";
 import { ThemeTextInput } from "@/components/UI/ThemeTextInput";
 import { UserValidation } from "@/constants/validation";
 import { useSinglePage } from "@/hooks/useSinglePage";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { router } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
 import { Keyboard, StyleSheet, View } from "react-native";
 
@@ -41,16 +43,28 @@ export default function first() {
     // TODO: 재검사 후 서버 전송
     // 단, 유효성 검사는 클라이언트에서만 하면 안됨
     Keyboard.dismiss();
+    if (page === 1) {
+      router.push("/auth/register/second");
+      return;
+    }
     NextPage();
   };
 
   const onPrevButton = () => {
-    PrevPage();
+    Keyboard.dismiss();
+    if (page > 0) {
+      PrevPage();
+    } else if (router.canGoBack()) {
+      router.back();
+    } else {
+      router.replace("/auth/welcome");
+    }
   };
 
   return (
     <WelcomeScreen>
       <View style={styles.Container}>
+        <GoBackHeader title="회원가입" onBackPress={onPrevButton} />
         <View style={styles.Content}>
           {page === 1 && (
             <>
