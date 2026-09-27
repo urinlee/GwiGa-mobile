@@ -20,6 +20,13 @@ export default function Home() {
       >
         <Text>first</Text>
       </Pressable>
+      <Pressable
+        onPress={() => {
+          router.push("/auth/register/second");
+        }}
+      >
+        <Text>second</Text>
+      </Pressable>
     </Screen>
   );
 }
