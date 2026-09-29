@@ -35,7 +35,7 @@ export function ThemeCard({
 const styles = StyleSheet.create({
   card: {
     borderWidth: 1,
-    borderRadius: 8,
+    borderRadius: 10,
     padding: 16,
   },
 });
