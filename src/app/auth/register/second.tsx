@@ -30,9 +30,9 @@ export default function RegisterVerificationScreen() {
   return (
     <WelcomeScreen>
       <View style={styles.container}>
-        <GoBackHeader />
+        <GoBackHeader title="통합인증" />
         <ThemeText theme="brand" style={styles.title}>
-          인증
+          통합인증
         </ThemeText>
         <ScrollView
           style={styles.content}
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   },
   title: {
     marginBottom: 20,
-    fontSize: 30,
+    fontSize: 24,
     fontWeight: "900",
     fontFamily: Fonts.sans,
   },
