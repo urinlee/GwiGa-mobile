@@ -2,6 +2,11 @@ import "@/global.css";
 
 import { Platform } from "react-native";
 
+const PrimaryColors = {
+  light: "#255442",
+  dark: "#98CBB0",
+} as const;
+
 /** Deep Forest colors, grouped by their role in the interface. */
 export const Colors = {
   light: {
@@ -9,12 +14,17 @@ export const Colors = {
       primary: "#233129",
       secondary: "#5D6B62",
       placeholder: "#6B786F",
-      brand: "#255442",
+      brand: PrimaryColors.light,
       inverse: "#FFFFFF",
     },
     background: {
       default: "#F7F8F4",
       subtle: "#EFF2ED",
+      surface: "#FFFFFF", // 카드·팝업 등 화면 위에 놓이는 영역
+      muted: "#E5EAE2", // 구분 영역·카드 내부의 보조 영역
+      accent: "#E2ECE5", // 선택된 항목·브랜드 강조 영역
+      primarySubtle: "#EAF1EC", // primary 계열의 옅은 안내 배경
+      primary: PrimaryColors.light, // 강조 배경: text.inverse와 함께 사용
     },
     container: {
       default: "#FFFFFF",
@@ -23,21 +33,21 @@ export const Colors = {
     border: {
       default: "#DEE5DC",
       input: "#829084",
-      focus: "#255442",
+      focus: PrimaryColors.light,
     },
     button: {
       primary: {
-        background: "#255442",
+        background: PrimaryColors.light,
         text: "#FFFFFF",
         pressed: "#1B4032",
       },
       secondary: {
         background: "#E2ECE5",
-        text: "#255442",
+        text: PrimaryColors.light,
       },
       ghost: {
         background: "transparent",
-        text: "#255442",
+        text: PrimaryColors.light,
       },
       disabled: {
         background: "#E5E9E3",
@@ -47,7 +57,7 @@ export const Colors = {
     status: {
       success: {
         background: "#E2ECE5",
-        text: "#255442",
+        text: PrimaryColors.light,
       },
       warning: {
         background: "#FAF1DC",
@@ -64,12 +74,17 @@ export const Colors = {
       primary: "#EDF2EA",
       secondary: "#B6C1B5",
       placeholder: "#929F94",
-      brand: "#98CBB0",
+      brand: PrimaryColors.dark,
       inverse: "#1D382A",
     },
     background: {
       default: "#111713",
       subtle: "#161E19",
+      surface: "#1C2520",
+      muted: "#202B24",
+      accent: "#263C30",
+      primarySubtle: "#1F2F26",
+      primary: PrimaryColors.dark,
     },
     container: {
       default: "#1C2520",
@@ -78,21 +93,21 @@ export const Colors = {
     border: {
       default: "#344238",
       input: "#66786A",
-      focus: "#98CBB0",
+      focus: PrimaryColors.dark,
     },
     button: {
       primary: {
-        background: "#98CBB0",
+        background: PrimaryColors.dark,
         text: "#1D382A",
         pressed: "#80B59A",
       },
       secondary: {
         background: "#263C30",
-        text: "#98CBB0",
+        text: PrimaryColors.dark,
       },
       ghost: {
         background: "transparent",
-        text: "#98CBB0",
+        text: PrimaryColors.dark,
       },
       disabled: {
         background: "#2B352E",
@@ -102,7 +117,7 @@ export const Colors = {
     status: {
       success: {
         background: "#263C30",
-        text: "#98CBB0",
+        text: PrimaryColors.dark,
       },
       warning: {
         background: "#3B321E",
