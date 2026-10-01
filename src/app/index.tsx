@@ -27,6 +27,13 @@ export default function Home() {
       >
         <Text>second</Text>
       </Pressable>
+      <Pressable
+        onPress={() => {
+          router.push("/main/main");
+        }}
+      >
+        <Text>main</Text>
+      </Pressable>
     </Screen>
   );
 }
