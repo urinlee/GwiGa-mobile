@@ -50,6 +50,9 @@ coverage/
 # Local tool settings
 .claude/settings.local.json
 .vscode/*.local.json
+.impeccable
+PRODUCT.md
 
 # Template example project
 /example/
+
