@@ -1,13 +1,9 @@
 import { Screen } from "@/components/Layout/Screen";
 import { GoogleLoginButton } from "@/components/UI/GoogleLoginButton";
 import { ThemeText } from "@/components/UI/ThemeText";
-import { StyleSheet, View, useWindowDimensions } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { StyleSheet, View } from "react-native";
 
 export default function Login() {
-  const { height } = useWindowDimensions();
-  const insets = useSafeAreaInsets();
-
   return (
     <Screen>
       <View style={styles.LoginContainer}>
