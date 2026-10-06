@@ -1,18 +1,18 @@
 import { Theme } from "@/constants/theme";
 import { useAppTheme } from "@/hooks/useAppTheme";
-import { StyleProp, Text, TextStyle } from "react-native";
+import { Text, type TextProps } from "react-native";
 
-interface ThemeTextProps {
+interface ThemeTextProps extends TextProps {
   theme?: keyof Theme["text"];
-  children?: React.ReactNode;
-  style?: StyleProp<TextStyle>;
 }
 
 export function ThemeText({
   theme = "primary",
-  children,
   style,
+  ...textProps
 }: ThemeTextProps) {
   const Colors = useAppTheme();
-  return <Text style={[{ color: Colors.text[theme] }, style]}>{children}</Text>;
+  return (
+    <Text {...textProps} style={[{ color: Colors.text[theme] }, style]} />
+  );
 }
